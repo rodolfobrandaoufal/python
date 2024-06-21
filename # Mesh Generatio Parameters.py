@@ -34,7 +34,6 @@ if y_plus > 30:
 else:
     N = 25
 
-
 #Sigma99 calculation
 if Re < 5e5:
     sigma99 = 4.91*L/(Re**0.5)
@@ -53,3 +52,7 @@ G_solution = sp.solve(equation, G)
 # Filter out only the real solutions
 real_G_solution = [sol.evalf() for sol in G_solution if sol.is_real]
 G = round(real_G_solution[0], 2)
+
+print('Growth Ratio:', G)
+print('Number of Layers:', N)
+print('Boundary Layer Height:', yh)
